@@ -16,7 +16,7 @@
 https://mhrowlan.github.io/streaming_provider_classifier_inside_vpn/
 ## Abstract
 
-With the widespread use of encrypted networks in recent years, analyzing network patterns and generating insights has become difficult due to the use of VPNs. Current solutions utilize data from traffic flows such as packet size, count, and time deltas to classify traffic on encrypted and unencrypted networks at a high accuracy. In our goal to classify the presence of video streaming in encrypted traffic, we reproduce these methods and add in additional flow and packet level statistics, as well as incorporate spectral features such as Welch’s power density to generate stronger features for our model. We achieve an average accuracy of 94.5% on our Random Forest model, successfully detecting streaming 96.3% of the time and detecting browsing 92.3% of the time.
+Whether to access another country's Netflix library or for privacy, more people are using Virtual Private Networks (VPN) to stream videos than ever before. However, many of the different service providers offer different user experiences that can lead to differences in the network transmissions. This repository contains the implementation of our classifying model to determine what streaming service provider was being used over a VPN. The streaming providers that the model identifies are Amazon Prime, Youtube, Netflix, Youtube Live, Twitch, and an other category consiting of Disney+, Discovery+, and Hulu. This is valuable in understanding the differences in the network work patterns for the different streaming service providers. We achieve an average accuracy of 96.5% on our Random Forest model.
 
 ## Approach
 
@@ -36,7 +36,7 @@ To leverage the existing dataset, you must be a member of DSMLP and have access 
 
 Log on to DSMLP via `ssh <username>@dsmlp-login.ucsd.edu`
 
-Launch a Docker container with the necessary components via `launch-180.sh -i jeq004/streaming_provider_classifier_inside_vpn -G B05_VPN_XRAY`
+Launch a Docker container with the necessary components via `launch-180.sh -i jeq004/streaming_provider_classifier_inside_vpn -G B05_VPN_XRAY -c 8 -g 1 -m 64`
 
 Clone this repository: `git clone https://github.com/mhrowlan/streaming_provider_classifier_inside_vpn.git`
 
@@ -104,4 +104,4 @@ Can optionally specify targets after test to only run that target. For example `
 
 ## Report
 
-An academic report on the exploration and model built in this repository can be found at [`references/report.pdf`](references/report.pdf)
+An academic report on the exploration and model built in this repository can be found at [`SPICIVPN_report.pdf`](SPICIVPN_report.pdf)
